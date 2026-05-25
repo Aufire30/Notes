@@ -1,0 +1,150 @@
+/* 全局样式 */
+body { font-family: Arial, sans-serif; }
+
+/* 表格样式：宽度100%，边框合并，内容居中 */
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+th { background-color: #f2f2f2; }
+
+/* 按钮基础样式 */
+.btn { padding: 5px 10px; cursor: pointer; }
+/* 删除按钮样式：红色背景，白色文字 */
+.btn-danger { background-color: #f44336; color: white; }
+/* 成功按钮样式：绿色背景，白色文字（用于添加商品和结算按钮） */
+.btn-success { background-color: #4CAF50; color: white; }
+/* 总计金额 */
+#sum { font-weight: bold; } 
+  .header-container {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 20px; /* 在购物车标题和表格之间添加一些空间 */
+}
+
+.delete-selected-btn,
+.clear-cart-btn {
+  padding: 5px 15px;
+  cursor: pointer;
+  background-color: #ffcccb;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.container {
+    max-width: 1200px; /* 设置最大宽度 */
+    margin: 0 auto; /* 水平居中 */
+    padding: 0 15px; /* 添加内边距 */
+  }
+  
+  /* 修改.total-checkout-container样式以适应固定容器 */
+  .total-checkout-container {
+    display: flex;
+    justify-content: space-between; /* 在结算按钮和总计之间添加间隔 */
+    width: 100%; /* 使容器宽度充满其父容器 */
+    align-items: center; /* 垂直居中 */
+    margin-top: 20px; /* 上边距 */
+    border: 1px solid #ccc; /* 添加边框 */
+    padding: 10px; /* 添加内边距 */
+  }
+  .total-checkout-container p {
+    margin: 0; /* 移除默认的边距 */
+    text-align: right; /* 将总计推向右边 */
+    margin-left: 700px;
+}
+  /* 修改表格样式以适应固定容器 */
+  table {
+    max-width: 100%; /* 确保表格不会超出容器宽度 */
+  }
+  
+  /* 确保图片不会超出其容器 */
+  .header-container img {
+    margin-right: 10px; /* 在图片和标题之间添加一些空间 */
+    max-width: 100%; /* 限制图片最大宽度 */
+    height: auto; /* 保持图片的宽高比 */
+  }
+  
+  /* 确保在较小屏幕上按钮也能良好显示 */
+  .delete-selected-btn,
+  .clear-cart-btn {
+    padding: 5px 15px;
+    font-size: 14px; /* 可根据需要调整字体大小 */
+  }
+  
+  /* 固定小计列的宽度：防止数字位数变化时表格宽度改变 */
+  th:nth-child(5),
+  td:nth-child(5) {
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+  }
+  
+  /* 确保数量列的内容居中 */
+  td:nth-child(4) {
+    text-align: center;
+  }
+  
+  /* 确保复选框列的内容居中 */
+  th:first-child,
+  td:first-child {
+    text-align: center;
+  }
+  
+  /* 数量输入框 */
+  .quantity {
+    width: 60px;
+    padding: 6px 8px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #fff;
+    transition: all 0.3s ease; /* 平滑过渡效果 */
+    outline: none;
+    margin: 0 5px;
+  }
+  
+  /* 数量输入框悬停效果 */
+  .quantity:hover {
+    border-color: #4CAF50;
+  }
+  
+  /* 数量输入框聚焦效果 */
+  .quantity:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    background-color: #f9fff9;
+  }
+  
+  /* 数量控制按钮样式 */
+  td:nth-child(4) .btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #ddd;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 数量控制按钮悬停效果 */
+  td:nth-child(4) .btn:hover {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  /* 数量控制按钮点击效果 */
+  td:nth-child(4) .btn:active {
+    transform: scale(0.95);
+  }
+  
+
+  

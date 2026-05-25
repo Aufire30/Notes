@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 引入样式css文件 -->
+        <link rel="stylesheet" href="Shopping_cart.css">
+        <title>购物车</title>
+    </head>
+    <body>  
+        <!-- 主容器 -->
+        <div class="container">
+            <!-- logo和标题 -->
+            <div class="header-container">
+                <img src="桂电.png" alt="桂电"/>
+                <h1>购物车</h1>
+            </div>
+            
+            <!-- 添加商品区域 -->
+            <div class="add-product-container" style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9;">
+                <h3 style="margin-top: 0; margin-bottom: 15px;">添加商品</h3>
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <div>
+                        <label>商品名称：</label>
+                        <!-- 商品名称输入框 -->
+                        <input type="text" id="product-name" placeholder="请输入商品名称" style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;"/>
+                    </div>
+                    <div>
+                        <label>价格：</label>
+                        <!-- 价格输入框 -->
+                        <input type="number" id="product-price" placeholder="请输入价格" min="0" step="0.01" style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;"/>
+                    </div>
+                    <div>
+                        <label>数量：</label>
+                        <!-- 数量输入框 -->
+                        <input type="number" id="product-quantity" placeholder="数量" min="1" value="1" style="padding: 5px; border: 1px solid #ccc; border-radius: 3px; width: 80px;"/>
+                    </div>
+                    <!-- 添加商品按钮 -->
+                    <button type="button" class="btn btn-success" onclick="addProduct()" style="padding: 5px 15px; font-size: 14px;">添加商品</button>
+                </div>
+            </div>
+            
+            <!-- 购物车表格 -->
+            <table border="1" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <!-- 全选复选框 -->
+                        <th><input type="checkbox" id="all" /></th>
+                        <th>名称</th>
+                        <th>价格</th>   
+                        <th>数量</th>   
+                        <th>小计</th>   
+                        <th>操作</th>   
+                    </tr>
+                </thead>
+                <!-- 表格主体 -->
+                <tbody id="cart-body">
+                    <tr> 
+                        <!-- 单个商品复选框 -->
+                        <td><input type="checkbox" class="item-checkbox" /></td>
+                        <td>键盘</td>
+                        <!-- 价格单元格：使用price类，用于JS获取价格 -->
+                        <td class="price">500</td>
+                        <td> 
+                            <!-- 数量控制 -->
+                            <button type="button" class="btn" onclick="sub(this)">-</button>
+                            <!-- 数量输入框：支持直接输入，使用quantity类 -->
+                            <input type="text" class="quantity" value="1"/>
+                            <button type="button" class="btn" onclick="add(this)">+</button>
+                        </td>
+                        <!-- 小计单元格 -->
+                        <td class="subtotal">500</td>
+                        <!-- 删除按钮 -->
+                        <td><button type="button" class="btn btn-danger" onclick="deleteRow(this)">删除</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- 底部操作区域 -->
+            <div class="total-checkout-container">
+                <div>
+                    <!-- 删除选中按钮 -->
+                    <button type="button" class="delete-selected-btn" onclick="deleteSelected()">删除选中</button>
+                    <!-- 清空购物车按钮 -->
+                    <button type="button" class="clear-cart-btn" onclick="clearCart()">清空购物车</button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <!-- 总计显示 -->
+                    <p style="margin: 0;">总计：<span id="sum">0</span>元</p>
+                    <!-- 结算按钮-->
+                    <button type="button" class="btn btn-success" onclick="checkout()" style="padding: 5px 15px; font-size: 14px;">结算</button>
+                </div>
+            </div>
+        </div>
+        <!-- 引入js文件 -->
+        <script src="Shopping_cart.js"></script>
+    </body>
+</html>

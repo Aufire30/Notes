@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 基础</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <input type = "button" value = "v-on" @click = "doIt">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "Hello Vue!"            
+            },
+            methods: {
+                    doIt:function(){
+                        alert("你点击了按钮！");
+                    }
+                }
+        });
+    </script>
+</body>
+</html>
