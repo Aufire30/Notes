@@ -1,2 +1,2 @@
 # Notes
-All Study Notes
+必须下载assets文件夹，里面是笔记里面的图片
