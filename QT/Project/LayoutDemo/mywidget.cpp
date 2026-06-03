@@ -28,7 +28,7 @@ void MyWidget::resizeEvent(QResizeEvent *event)
     QString strIndex = QString("[%1]-----------").arg(index++);
 
     //按钮的宽度
-    QString width = QString("按钮宽度: \t%1, %2, %3, %4")
+    QString width = QString("按钮宽度: \t\t%1, %2, %3, %4")
                         .arg(ui->btnAdd->width())
                         .arg(ui->btnDelete->width())
                         .arg(ui->btnModify->width())
@@ -46,6 +46,14 @@ void MyWidget::resizeEvent(QResizeEvent *event)
                              .arg(margins.bottom());
 
     ui->textEdit->append(strMargins);
+
+    //间距
+    int spacing = ui->horizontalLayout->layout()->spacing();
+    QString strSpacing = QString("间距: \t\t%1").arg(spacing);
+
+    ui->textEdit->append(strSpacing);
+    ui->textEdit->append("--------------");
+    ui->textEdit->append("");
 
     //移动光标到最后一行
     ui->textEdit->moveCursor(QTextCursor::End);
